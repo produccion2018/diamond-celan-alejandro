@@ -1,0 +1,62 @@
+.trabaja-section {
+    padding: 60px 10%;
+    background: #fff;
+    text-align: center;
+}
+
+.trabaja-section h1 {
+    font-size: 32px;
+    color: #00bcd4;
+    margin-bottom: 15px;
+}
+
+.trabaja-section p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.trabaja-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.trabaja-form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.trabaja-form input,
+.trabaja-form textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.trabaja-form button {
+    background: #00bcd4;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.trabaja-form button:hover {
+    background: #007b8a;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .trabaja-form {
+        width: 100%;
+    }
+}
