@@ -699,7 +699,7 @@ body, html {
     width: 100%;
     background: #fff;
     padding: 20px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px #00000033;
     z-index: 1000;
   }
 
@@ -736,3 +736,33 @@ body, html {
     border: 1px solid #ccc;
   }
 }
+
+
+/* Botón flotante WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #25d366;
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 4px 8px #0000004d;
+  z-index: 9999;
+  transition: transform 0.2s ease-in-out;
+
+  /* Animación flotante */
+  animation: float-wa 3s ease-in-out infinite;
+}
+
+/* Hover agranda un poco */
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* Definición de la animación */
+@keyframes float-wa {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
