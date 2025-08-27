@@ -8,48 +8,73 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/espacio-limpio.css" />
+    <link rel="stylesheet" href="../css/amaDeLlaves.css" />
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar-limpieza">
       <div class="logo">DIAMOND CELAN</div>
+
+      <!-- Botón hamburguesa -->
+      <button id="menu-toggle">☰</button>
+
       <ul class="nav-links">
-        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../index.html" data-key="home">Inicio</a></li>
         <li class="dropdown">
-          <a href="#">Limpieza Profesional ▾</a>
+          <a href="#" data-key="services">Limpieza Profesional ▾</a>
           <ul class="dropdown-menu">
             <li>
-              <a href="limpieza-profesional.html">Limpieza Profesional</a>
+              <a href="limpieza-profesional.html" data-key="pro-clean"
+                >Limpieza Profesional</a
+              >
             </li>
             <li>
-              <a href="./limpieza-de-obras.html">Limpieza Final de Obras</a>
+              <a href="./limpieza-de-obras.html" data-key="final-work"
+                >Limpieza Final de Obras</a
+              >
             </li>
             <li>
-              <a href="./limpieza-de-oficina.html">Limpieza de Oficinas</a>
+              <a href="./limpieza-de-oficina.html" data-key="office"
+                >Limpieza de Oficinas</a
+              >
             </li>
-            <li><a href="./limpieza-deposito.html">Limpieza de Depósito</a></li>
             <li>
-              <a href="comerciales.html"
+              <a href="./limpieza-deposito.html" data-key="deposit"
+                >Limpieza de Depósito</a
+              >
+            </li>
+            <li>
+              <a href="comerciales.html" data-key="retail"
                 >Establecimientos Comerciales y Retailes</a
               >
             </li>
-            <li><a href="eventos.html">Limpieza Final de Eventos</a></li>
             <li>
-              <a href="ama-de-llaves.html" class="active"
+              <a href="eventos.html" data-key="events"
+                >Limpieza Final de Eventos</a
+              >
+            </li>
+            <li>
+              <a
+                href="ama-de-llaves.html"
+                class="active"
+                data-key="housekeeping"
                 >Servicio Ama de Llaves</a
               >
             </li>
           </ul>
         </li>
-        <li><a href="planes.html">Planes</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="cobertura.html">Cobertura</a></li>
-        <li><a href="trabaja.html">Trabajá con nosotros</a></li>
+        <li><a href="planes.html" data-key="plans">Planes</a></li>
+        <li><a href="./nostros.html" data-key="about">Nosotros</a></li>
+        <li><a href="cobertura.html" data-key="coverage">Cobertura</a></li>
+        <li>
+          <a href="./trabajaConNosotros.html" data-key="jobs"
+            >Trabajá con nosotros</a
+          >
+        </li>
       </ul>
 
       <div class="nav-right">
-        <button class="btn-contacto">Contacto</button>
+        <button class="btn-contacto" data-key="contact">Contacto</button>
         <select id="language-select">
           <option value="es">Español</option>
           <option value="en">English</option>
@@ -67,7 +92,6 @@
 
         <div class="limpieza-texto">
           <h1>CONFÍA TU HOGAR A NUESTRO SERVICIO AMA DE LLAVES</h1>
-
           <p>
             En DIAMOND CELAN ofrecemos un servicio integral de ama de llaves que
             asegura la limpieza, organización y cuidado completo de su hogar.
@@ -128,5 +152,7 @@
         <p>Diseño web: Buenos Aires IT</p>
       </div>
     </footer>
+
+    <script src="../js/amaDeLlaves.js"></script>
   </body>
 </html>

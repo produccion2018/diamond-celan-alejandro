@@ -1,62 +1,81 @@
-const languageSelect = document.getElementById('language-select');
+// ===== Menú hamburguesa =====
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+// ===== Cambio de idioma =====
+const languageSelect = document.getElementById("language-select");
 
 const translations = {
-    es: {
-        limpieza_profesional: "Limpieza Profesional",
-        planes: "Planes",
-        nosotros: "Nosotros",
-        cobertura: "Cobertura",
-        trabaja: "Trabajá con nosotros",
-        contacto: "Contacto",
-        contactanos: "Contáctanos",
-        empresa_limpieza: "EMPRESA DE LIMPIEZA PROFESIONAL",
-        limpieza_profesional_item: "Limpieza Profesional",
-        limpieza_final_obras: "Limpieza Final de Obras",
-        limpieza_oficinas: "Limpieza de Oficinas",
-        limpieza_deposito: "Limpieza de Depósito",
-        establecimientos: "Establecimientos Comerciales y Retailes",
-        limpieza_eventos: "Limpieza Final de Eventos"
-    },
-    en: {
-        limpieza_profesional: "Professional Cleaning",
-        planes: "Plans",
-        nosotros: "About Us",
-        cobertura: "Coverage",
-        trabaja: "Work with us",
-        contacto: "Contact",
-        contactanos: "Contact Us",
-        empresa_limpieza: "PROFESSIONAL CLEANING COMPANY",
-        limpieza_profesional_item: "Professional Cleaning",
-        limpieza_final_obras: "Final Cleaning of Construction",
-        limpieza_oficinas: "Office Cleaning",
-        limpieza_deposito: "Warehouse Cleaning",
-        establecimientos: "Commercial and Retail Establishments",
-        limpieza_eventos: "Final Event Cleaning"
-    },
-    nl: {
-        limpieza_profesional: "Professionele Schoonmaak",
-        planes: "Plannen",
-        nosotros: "Over Ons",
-        cobertura: "Dekking",
-        trabaja: "Werk met ons",
-        contacto: "Contact",
-        contactanos: "Neem contact op",
-        empresa_limpieza: "PROFESSIONEEL SCHOONMAAKBEDRIJF",
-        limpieza_profesional_item: "Professionele Schoonmaak",
-        limpieza_final_obras: "Eindschoonmaak Bouw",
-        limpieza_oficinas: "Kantoor Schoonmaak",
-        limpieza_deposito: "Magazijn Schoonmaak",
-        establecimientos: "Commerciële en Retail Locaties",
-        limpieza_eventos: "Eindschoonmaak Evenementen"
-    }
+  es: {
+    heroTitle: "EMPRESA DE LIMPIEZA PROFESIONAL",
+    heroButton: "Contáctanos",
+    instalaciones: "Conocé los detalles de las distintas instalaciones donde brindamos nuestro trabajo!",
+    nav: ["Limpieza Profesional", "Planes", "Nosotros", "Cobertura", "Trabajá con nosotros"]
+  },
+  en: {
+    heroTitle: "PROFESSIONAL CLEANING COMPANY",
+    heroButton: "Contact us",
+    instalaciones: "Discover the details of the different facilities where we provide our work!",
+    nav: ["Professional Cleaning", "Plans", "About Us", "Coverage", "Work with us"]
+  },
+  nl: {
+    heroTitle: "PROFESSIONEEL SCHOONMAAKBEDRIJF",
+    heroButton: "Neem contact met ons op",
+    instalaciones: "Ontdek de details van de verschillende faciliteiten waar wij ons werk leveren!",
+    nav: ["Professionele Reiniging", "Plannen", "Over ons", "Dekking", "Werk met ons"]
+  },
 };
 
-languageSelect.addEventListener('change', () => {
-    const lang = languageSelect.value;
-    document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        if(translations[lang][key]){
-            el.textContent = translations[lang][key];
-        }
-    });
+languageSelect.addEventListener("change", (e) => {
+  const lang = e.target.value;
+
+  // Hero
+  document.querySelector(".hero-content h1").textContent = translations[lang].heroTitle;
+  document.querySelector(".hero-content .btn-contacto").textContent = translations[lang].heroButton;
+
+  // Instalaciones título
+  document.querySelector(".instalaciones h2").textContent = translations[lang].instalaciones;
+
+  // Navbar (ajustamos los primeros li visibles, sin dropdowns)
+  const navItems = document.querySelectorAll("#nav-links > li > a");
+  navItems.forEach((item, i) => {
+    if (translations[lang].nav[i]) {
+      item.textContent = translations[lang].nav[i];
+    }
+  });
 });
+
+// ===== Botón flotante de WhatsApp =====
+const whatsappButton = document.createElement("a");
+whatsappButton.href = "https://wa.me/5491125687707"; // <-- tu número real en formato internacional
+whatsappButton.target = "_blank";
+whatsappButton.innerHTML = "💬";
+whatsappButton.style.position = "fixed";
+whatsappButton.style.bottom = "20px";
+whatsappButton.style.right = "20px";
+whatsappButton.style.background = "#25d366";
+whatsappButton.style.color = "white";
+whatsappButton.style.fontSize = "28px";
+whatsappButton.style.width = "55px";
+whatsappButton.style.height = "55px";
+whatsappButton.style.borderRadius = "50%";
+whatsappButton.style.display = "flex";
+whatsappButton.style.justifyContent = "center";
+whatsappButton.style.alignItems = "center";
+whatsappButton.style.boxShadow = "0 4px 6px hsla(0, 0%, 0%, 0.20)";
+whatsappButton.style.zIndex = "1000";
+whatsappButton.style.textDecoration = "none";
+whatsappButton.style.transition = "transform 0.3s ease";
+
+whatsappButton.addEventListener("mouseover", () => {
+  whatsappButton.style.transform = "scale(1.1)";
+});
+whatsappButton.addEventListener("mouseout", () => {
+  whatsappButton.style.transform = "scale(1)";
+});
+
+document.body.appendChild(whatsappButton);

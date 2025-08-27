@@ -14,13 +14,18 @@
     <!-- Navbar -->
     <nav class="navbar-limpieza">
       <div class="logo">DIAMOND CELAN</div>
+
+      <div class="menu-toggle">☰</div>
+
       <ul class="nav-links">
-        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../index.html" data-key="home">Inicio</a></li>
         <li class="dropdown">
-          <a href="#">Limpieza Profesional ▾</a>
+          <a href="#" data-key="services">Limpieza Profesional ▾</a>
           <ul class="dropdown-menu">
             <li>
-              <a href="limpieza-profesional.html">Limpieza Profesional</a>
+              <a href="limpieza-profesional.html" data-key="pro-clean"
+                >Limpieza Profesional</a
+              >
             </li>
             <li>
               <a href="./hogares impeccable confianza total.html"
@@ -47,11 +52,11 @@
                 >Tu espacio limpio, tu tranquilidad</a
               >
             </li>
-
             <li>
-              <a href="./amaDeLlaves.html">Servicio de Ama de Llaves</a>
+              <a href="./amaDeLlaves.html" data-key="housekeeping"
+                >Servicio de Ama de Llaves</a
+              >
             </li>
-
             <li>
               <a href="./tuPerroNuestroCompromiso.html"
                 >Tu Perro, Nuestro Compromiso</a
@@ -59,14 +64,18 @@
             </li>
           </ul>
         </li>
-        <li><a href="planes.html">Planes</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="cobertura.html">Cobertura</a></li>
-        <li><a href="trabaja.html">Trabajá con nosotros</a></li>
+        <li><a href="planes.html" data-key="plans">Planes</a></li>
+        <li><a href="./nostros.html" data-key="about">Nosotros</a></li>
+        <li><a href="cobertura.html" data-key="coverage">Cobertura</a></li>
+        <li>
+          <a href="./trabajaConNosotros.html" data-key="jobs"
+            >Trabajá con nosotros</a
+          >
+        </li>
       </ul>
 
       <div class="nav-right">
-        <button class="btn-contacto">Contacto</button>
+        <button class="btn-contacto" data-key="contact">Contact</button>
         <select id="language-select">
           <option value="es">Español</option>
           <option value="en">English</option>
@@ -146,5 +155,7 @@
         <p>Diseño web: Buenos Aires IT</p>
       </div>
     </footer>
+
+    <script src="../js/tuPerro.js"></script>
   </body>
 </html>

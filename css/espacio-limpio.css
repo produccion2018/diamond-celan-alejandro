@@ -123,3 +123,22 @@ body, html {
 .footer { background: #222; color: #ddd; padding: 40px 20px 20px; font-size: 14px; }
 .footer-container { display: flex; justify-content: space-between; gap: 40px; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; }
 .footer-logo { flex: 1; }
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+    .navbar-limpieza { flex-wrap: wrap; padding: 15px 20px; }
+    .nav-links { flex-direction: column; display: none; width: 100%; gap: 10px; margin-top: 10px; }
+    .nav-links.show { display: flex; }
+    .nav-right { width: 100%; justify-content: flex-start; margin-top: 10px; gap: 10px; }
+    .menu-toggle { display: block; font-size: 28px; cursor: pointer; color: #00bcd4; }
+}
+
+@media (min-width: 993px) {
+    .menu-toggle { display: none; }
+}
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+    .navbar-limpieza { flex-wrap: wrap; padding: 15px 20px; }
+    .nav-links { flex-direction: column; gap: 10px; margin-top: 10px; }
+    .nav-right { width: 100%; justify-content: flex-start; margin-top: 10px; gap: 10px; }
+}

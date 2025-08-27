@@ -60,6 +60,7 @@ body, html {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     border-radius: 5px;
     padding: 10px 0;
+    z-index: 999;
 }
 
 .dropdown-menu li {
@@ -83,7 +84,8 @@ body, html {
 }
 
 .btn-contacto {
-    padding: 10px 20px;
+    padding: 6px 14px;  /* más chico */
+    font-size: 14px;    /* más chico */
     background-color: #00bcd4;
     color: #fff;
     border: none;
@@ -97,7 +99,8 @@ body, html {
 }
 
 #language-select {
-    padding: 5px 10px;
+    padding: 4px 8px;   /* más chico */
+    font-size: 13px;    /* más chico */
     border-radius: 5px;
     border: 1px solid #ccc;
 }
@@ -271,6 +274,15 @@ body, html {
 }
 
 /* ===== Responsive ===== */
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #00bcd4;
+}
+
 @media (max-width: 992px) {
   .limpieza-container {
     flex-direction: column;
@@ -288,5 +300,42 @@ body, html {
   .footer-container {
     flex-direction: column;
     text-align: center;
+  }
+
+  /* Menú responsive */
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #00000033;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  /* Botones más chicos en móviles */
+  .btn-contacto {
+    padding: 5px 12px;
+    font-size: 13px;
+  }
+
+  #language-select {
+    padding: 3px 6px;
+    font-size: 12px;
   }
 }

@@ -86,6 +86,7 @@ body, html {
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
+  font-size: 14px;
 }
 
 .btn-contacto:hover {
@@ -93,9 +94,10 @@ body, html {
 }
 
 #language-select {
-  padding: 5px 10px;
+  padding: 3px 6px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  font-size: 12px;
 }
 
 /* ===== Sección Nosotros ===== */
@@ -289,7 +291,72 @@ body, html {
   color: #777;
 }
 
+/* ===== Hamburger Menu ===== */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 /* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background-color: #f9f9f9;
+    display: none;
+  }
+
+  .dropdown.active .dropdown-menu {
+    display: block;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+}
+
+/* ===== Cards responsive ===== */
 @media (max-width: 992px) {
   .nosotros-cards {
     flex-direction: column;

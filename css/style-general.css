@@ -672,3 +672,67 @@ body, html {
     text-align: center;
   }
 }
+
+/* ================== RESPONSIVE EXTRA ================== */
+
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #00bcd4;
+}
+
+/* Responsive Navbar */
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  /* 🔹 Contacto e idioma siguen visibles en móviles */
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    padding-right: 15px;
+  }
+
+  .btn-contacto {
+    padding: 6px 12px;
+    border: none;
+    background: #00bcd4;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  #language-select {
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+}
