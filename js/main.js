@@ -186,3 +186,29 @@ languageSelect.addEventListener("change", (e) => {
   document.querySelector(".footer-bottom p:first-child").textContent = translations[lang].footerRights;
   document.querySelector(".footer-bottom p:last-child").textContent = translations[lang].footerDesign;
 });
+
+// whatsapp
+(function () {
+  const wa = document.querySelector('.whatsapp-float');
+  if (!wa) return;
+
+  const langSel = document.getElementById('language-select');
+  const number = '5491111111111'; // <-- tu número
+
+  function msgFor(lang) {
+    switch (lang) {
+      case 'en': return 'Hello Diamond Clean, I would like a quote.';
+      case 'nl': return 'Hallo Diamond Clean, ik wil graag een offerte.';
+      default:   return 'Hola Diamond Clean, quiero pedir un presupuesto.';
+    }
+  }
+
+  function updateLink() {
+    const lang = (langSel && langSel.value) || 'es';
+    const txt = encodeURIComponent(msgFor(lang));
+    wa.setAttribute('href', `https://wa.me/${number}?text=${txt}`);
+  }
+
+  updateLink();
+  if (langSel) langSel.addEventListener('change', updateLink);
+})();
