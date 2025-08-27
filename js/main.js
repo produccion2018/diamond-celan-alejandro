@@ -6,7 +6,7 @@ menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
-// ===== Cambio de idioma =====
+// ===== Traducciones =====
 const languageSelect = document.getElementById("language-select");
 
 const translations = {
@@ -26,7 +26,6 @@ const translations = {
     servicioTitle: "¿Qué es un servicio de limpieza profesional?",
     servicioDesc: "Un servicio de limpieza profesional consiste en realizar limpiezas meticulosas llevadas a cabo por profesionales capacitados en el área para limpiar, desinfectar e higienizar de manera adecuada. En Limptech, te aseguramos un servicio profesional mientras te garantizamos que tu espacio esté limpio y en buenas condiciones.",
     servicioWhy: "¿Por qué elegirnos?",
-    servicioListTitle: "Con más de 1 años de experiencia en limpieza, hemos brindado nuestro servicio con profesionalismo y expertise en todo tipo de establecimientos:",
     servicioList: ["Institucional", "Hospitales, Sanatorios y Laboratorios", "Industrial y Fábricas", "Limpieza de Oficinas", "Hotelería", "Residencial y Consorcios", "Restaurantes", "Depósitos", "Final de Eventos", "Tratamiento de Pisos", "Limpieza de Alfombras", "Final de Obra"],
     expertosTitle: "¡Somos expertos en limpieza para todo tipo de ambiente, incluido el tuyo!",
     expertosCards: [
@@ -65,7 +64,6 @@ const translations = {
     servicioTitle: "What is a professional cleaning service?",
     servicioDesc: "A professional cleaning service involves meticulous cleaning carried out by trained professionals to clean, disinfect, and sanitize properly. At Limptech, we provide a professional service while ensuring your space is clean and in excellent condition.",
     servicioWhy: "Why choose us?",
-    servicioListTitle: "With over 1 year of cleaning experience, we have provided our service professionally in all types of establishments:",
     servicioList: ["Institutional", "Hospitals, Clinics & Laboratories", "Industrial & Factories", "Office Cleaning", "Hospitality", "Residential & Condos", "Restaurants", "Warehouses", "Event Cleaning", "Floor Treatment", "Carpet Cleaning", "Post-Construction Cleaning"],
     expertosTitle: "We are cleaning experts for every type of environment, including yours!",
     expertosCards: [
@@ -88,9 +86,47 @@ const translations = {
     footerRights: "© 2025 LimpiezaPro - All rights reserved.",
     footerDesign: "Web design: Buenos Aires IT"
   },
-  // Puedes agregar más idiomas aquí...
+  nl: {
+    heroTitle: "PROFESSIONEEL SCHOONMAAKBEDRIJF",
+    heroButton: "Neem contact met ons op",
+    instalaciones: "Ontdek de details van de verschillende faciliteiten waar wij ons werk leveren!",
+    nav: ["Professionele Reiniging", "Plannen", "Over ons", "Dekking", "Werk met ons"],
+    cards: [
+      { title: "Eindschoonmaak", desc: "Wij garanderen tevredenheid en efficiëntie bij het schoonmaken.", btn: "Meer info" },
+      { title: "Industrieën & Fabrieken", desc: "Wij bieden gepersonaliseerde service voor uw bedrijf.", btn: "Meer info" },
+      { title: "Commerciële & Retailruimtes", desc: "Volledige en continue reiniging van uw pand door professionals.", btn: "Meer info" },
+      { title: "Kantoren", desc: "Wij houden uw werkruimtes schoon en georganiseerd.", btn: "Meer info" },
+      { title: "Magazijnen", desc: "Diepe reiniging van opslag- en logistieke gebieden.", btn: "Meer info" },
+      { title: "Evenementen", desc: "Wij zorgen voor de schoonmaak voor en na elk evenement.", btn: "Meer info" }
+    ],
+    servicioTitle: "Wat is een professionele schoonmaakdienst?",
+    servicioDesc: "Een professionele schoonmaakdienst omvat grondige reiniging uitgevoerd door getrainde professionals om op de juiste manier te reinigen, desinfecteren en saneren. Bij Limptech bieden we een professionele service en zorgen we dat uw ruimte schoon en in uitstekende staat is.",
+    servicioWhy: "Waarom ons kiezen?",
+    servicioList: ["Institutioneel", "Ziekenhuizen, Klinieken & Laboratoria", "Industrieel & Fabrieken", "Kantoorreiniging", "Gastvrijheid", "Residentieel & Verenigingen", "Restaurants", "Magazijnen", "Evenementenreiniging", "Vloerbehandeling", "Tapijtreiniging", "Eindschoonmaak"],
+    expertosTitle: "Wij zijn schoonmaakexperts voor elk type omgeving, inclusief de uwe!",
+    expertosCards: [
+      { title: "Tevredenheid Gegarandeerd", desc: "Wij zorgen voor optimale, zeer professionele resultaten die alle verwachtingen overtreffen." },
+      { title: "Persoonlijke Aandacht", desc: "Wij bieden directe service en flexibele werktijden, afgestemd op al uw behoeften." },
+      { title: "Getraind Personeel", desc: "Hoogopgeleide professionals in schoonmaaktechnieken en het omgaan met gevoelige producten." },
+      { title: "Aangepaste Offerte", desc: "Wij bieden professionele service die is afgestemd op uw verwachtingen en behoeften." }
+    ],
+    planesTitle: "Onze Plannen",
+    planesDesc: [
+      "Onze prioriteit als schoonmaakprofessionals is het bieden van veilige en hygiënische werkplekken.",
+      "Wij gebruiken hoogwaardige producten en gecertificeerde schoonmaaktechnieken vanaf het begin, waarbij we onze service voortdurend updaten en ons personeel trainen.",
+      "Het inhuren van ons bedrijf zorgt ervoor dat u voorop loopt in de strijd tegen alle soorten virussen en bacteriën."
+    ],
+    planesContact: "Neem contact met ons op en ontdek het plan dat we voor uw bedrijf hebben:",
+    footerContactTitle: "CONTACT",
+    footerEmail: "sales@limpiezapro.com.ar",
+    footerPhone1: "(011) 111111111",
+    footerPhone2: "(011) 11111111",
+    footerRights: "© 2025 LimpiezaPro - Alle rechten voorbehouden.",
+    footerDesign: "Webdesign: Buenos Aires IT"
+  }
 };
 
+// ===== Cambio de idioma =====
 languageSelect.addEventListener("change", (e) => {
   const lang = e.target.value;
 
@@ -150,4 +186,3 @@ languageSelect.addEventListener("change", (e) => {
   document.querySelector(".footer-bottom p:first-child").textContent = translations[lang].footerRights;
   document.querySelector(".footer-bottom p:last-child").textContent = translations[lang].footerDesign;
 });
-
