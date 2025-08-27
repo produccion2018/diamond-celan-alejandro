@@ -14,7 +14,7 @@ body, html {
     align-items: center;
     padding: 15px 50px;
     background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px #0000001a;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -57,7 +57,7 @@ body, html {
     left: 0;
     background-color: #fff;
     min-width: 220px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px #00000033;
     border-radius: 5px;
     padding: 10px 0;
     z-index: 999;
@@ -125,7 +125,7 @@ body, html {
 .limpieza-imagen img {
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 8px #0000001a;
 }
 
 .limpieza-texto {
