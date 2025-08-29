@@ -212,3 +212,48 @@ languageSelect.addEventListener("change", (e) => {
   updateLink();
   if (langSel) langSel.addEventListener('change', updateLink);
 })();
+
+
+
+
+
+const playlist = [
+  { title: "Compy Jazz", url: "https://freepd.com/music/Compy%20Jazz.mp3" },
+  { title: "Martini Sunset", url: "https://freepd.com/music/Martini%20Sunset.mp3" },
+  { title: "Groovin", url: "https://freepd.com/music/Groovin.mp3" },
+  { title: "Bebop 25", url: "https://audionautix.com/Music/Bebop25.mp3" },
+  { title: "Big Swing Band", url: "https://audionautix.com/Music/BigSwingBand.mp3" }
+];
+
+let current = 0;
+const player = document.getElementById("jazzPlayer");
+const titleElem = document.getElementById("trackTitle");
+
+function loadTrack(index) {
+  current = index;
+  player.src = playlist[current].url;
+  titleElem.textContent = playlist[current].title;
+  player.play().catch(err => console.log("Reproducción automática bloqueada:", err));
+}
+
+player.addEventListener("ended", () => {
+  loadTrack((current + 1) % playlist.length);
+});
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+  loadTrack((current - 1 + playlist.length) % playlist.length);
+});
+document.getElementById("nextBtn").addEventListener("click", () => {
+  loadTrack((current + 1) % playlist.length);
+});
+
+// Inicia en la primera pista
+loadTrack(0);
+
+
+// Funcionalidad para los botones de contacto
+document.querySelectorAll(".btn-contacto").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    window.location.href = "mailto:mauroalexanderpinto@gmail.com?subject=Consulta%20Diamond%20Clean&body=Hola%20Mauro%2C%20quiero%20más%20información%20sobre%20tus%20servicios.";
+  });
+});

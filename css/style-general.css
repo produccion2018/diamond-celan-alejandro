@@ -745,24 +745,130 @@ body, html {
   bottom: 20px;
   background: #25d366;
   border-radius: 50%;
-  padding: 12px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 4px 8px #0000004d;
   z-index: 9999;
-  transition: transform 0.2s ease-in-out;
-
-  /* Animación flotante */
+  cursor: pointer;
   animation: float-wa 3s ease-in-out infinite;
+  transition: transform 0.2s ease-in-out;
 }
 
-/* Hover agranda un poco */
+.whatsapp-float img {
+  width: 28px;
+  height: 28px;
+}
+
 .whatsapp-float:hover {
   transform: scale(1.1);
 }
 
-/* Definición de la animación */
+/* Animación flotante */
 @keyframes float-wa {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-8px); }
   100% { transform: translateY(0); }
 }
 
+/* Responsive: más chico en pantallas pequeñas */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+    right: 15px;
+    bottom: 15px;
+  }
+  .whatsapp-float img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-float {
+    width: 44px;
+    height: 44px;
+    right: 12px;
+    bottom: 12px;
+  }
+  .whatsapp-float img {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+
+/* 🎷 Reproductor de Jazz */
+.jazz-player-container {
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  background: #1e1e1e;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jazz-title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #00bcd4;
+  text-align: center;
+}
+
+.jazz-player-container audio {
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.jazz-controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.jazz-controls button {
+  background: #00bcd4;
+  border: none;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.jazz-controls button:hover {
+  background: #007b8a;
+  transform: translateY(-2px);
+}
+
+/* 📱 Responsive */
+@media (max-width: 480px) {
+  .jazz-player-container {
+    padding: 15px;
+  }
+
+  .jazz-title {
+    font-size: 1rem;
+  }
+
+  .jazz-controls button {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    flex: 1; /* los botones ocupan mismo ancho en móvil */
+    min-width: 120px;
+  }
+}
