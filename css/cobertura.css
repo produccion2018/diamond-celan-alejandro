@@ -54,7 +54,7 @@ body, html {
   left: 0;
   background-color: #fff;
   min-width: 220px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px #00000026;
   border-radius: 8px;
   padding: 10px 0;
 }
@@ -100,109 +100,90 @@ body, html {
   font-size: 12px;
 }
 
-/* ===== Sección Nosotros ===== */
-.nosotros-section {
+/* ===== Sección Cobertura ===== */
+.cobertura-section {
   padding: 60px 10%;
   text-align: center;
 }
 
-.nosotros-intro h1 {
+.cobertura-intro h1 {
   font-size: 38px;
   color: #007b8a;
   margin-bottom: 15px;
 }
 
-.nosotros-intro p {
+.cobertura-intro p {
   font-size: 18px;
   margin-bottom: 50px;
   color: #005f6b;
 }
 
-/* ===== Cards ===== */
-.nosotros-cards {
+/* ===== Cards Cobertura Mejoradas ===== */
+.cobertura-cards {
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
+  margin-top: 40px;
 }
 
-.nosotros-card {
+.cobertura-card {
   flex: 1 1 300px;
   max-width: 350px;
-  border-radius: 15px;
-  padding: 25px 20px;
+  border-radius: 20px;
+  padding: 30px 25px;
+  background: linear-gradient(145deg, #00d4ff, #007b8a);
   color: #fff;
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s, box-shadow 0.4s;
+  transition: transform 0.5s, box-shadow 0.5s, background 0.5s;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.nosotros-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-/* Colores y gradientes */
-.card-mision {
-  background: linear-gradient(135deg, #00bcd4, #00e5ff);
-}
-
-.card-vision {
-  background: linear-gradient(135deg, #ff8a65, #ff7043);
-}
-
-.card-valores {
-  background: linear-gradient(135deg, #9c27b0, #e040fb);
-}
-
-.nosotros-card i {
-  margin-bottom: 15px;
-}
-
-.nosotros-card h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-}
-
-.nosotros-card p, .nosotros-card ul {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.nosotros-card ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.nosotros-card ul li {
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 25px;
-}
-
-.nosotros-card ul li::before {
-  content: "\f00c";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  color: #fff;
+.cobertura-card::before {
+  content: "";
   position: absolute;
-  left: 0;
-  top: 0;
-}
-
-/* Animación cards */
-.nosotros-card {
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 70%);
+  transform: rotate(45deg);
   opacity: 0;
-  transform: translateY(40px);
-  animation: slideIn 1s forwards;
+  transition: opacity 0.5s;
 }
-.nosotros-card:nth-child(1) { animation-delay: 0.2s; }
-.nosotros-card:nth-child(2) { animation-delay: 0.4s; }
-.nosotros-card:nth-child(3) { animation-delay: 0.6s; }
 
-@keyframes slideIn {
-  0% { opacity: 0; transform: translateY(40px);}
-  100% { opacity: 1; transform: translateY(0);}
+.cobertura-card:hover::before {
+  opacity: 1;
+}
+
+.cobertura-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  background: linear-gradient(145deg, #00e5ff, #0097a7);
+}
+
+.cobertura-card i {
+  font-size: 36px;
+  margin-bottom: 20px;
+  display: inline-block;
+  transition: transform 0.4s;
+}
+
+.cobertura-card:hover i {
+  transform: rotate(15deg) scale(1.2);
+}
+
+.cobertura-card h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.cobertura-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #f0f9fb;
 }
 
 /* ===== Contacto Buttons ===== */
@@ -335,6 +316,18 @@ body, html {
   .menu-toggle {
     display: block;
   }
+
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .whatsapp-float img {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 @media (min-width: 769px) {
@@ -356,17 +349,28 @@ body, html {
   }
 }
 
-/* ===== Cards responsive ===== */
 @media (max-width: 992px) {
-  .nosotros-cards {
+  .cobertura-cards {
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
     align-items: center;
   }
 }
 
+@media (max-width: 480px) {
+  .whatsapp-float {
+    width: 44px;
+    height: 44px;
+    right: 12px;
+    bottom: 12px;
+  }
+  .whatsapp-float img {
+    width: 22px;
+    height: 22px;
+  }
+}
 
-/* Botón flotante WhatsApp */
+/* ===== Botón flotante WhatsApp ===== */
 .whatsapp-float {
   position: fixed;
   right: 20px;
@@ -394,36 +398,8 @@ body, html {
   transform: scale(1.1);
 }
 
-/* Animación flotante */
 @keyframes float-wa {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-8px); }
   100% { transform: translateY(0); }
-}
-
-/* Responsive: más chico en pantallas pequeñas */
-@media (max-width: 768px) {
-  .whatsapp-float {
-    width: 48px;
-    height: 48px;
-    right: 15px;
-    bottom: 15px;
-  }
-  .whatsapp-float img {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .whatsapp-float {
-    width: 44px;
-    height: 44px;
-    right: 12px;
-    bottom: 12px;
-  }
-  .whatsapp-float img {
-    width: 22px;
-    height: 22px;
-  }
 }

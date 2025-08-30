@@ -152,3 +152,11 @@ languageSelect.addEventListener('change', (e) => {
   document.querySelector(".limpieza-texto h2:nth-of-type(2)").textContent = texto.whyTitle;
   document.querySelector(".limpieza-texto p:nth-of-type(2)").textContent = texto.whyText;
 });
+
+
+// Funcionalidad para los botones de contacto
+document.querySelectorAll(".btn-contacto").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    window.location.href = "mailto:mauroalexanderpinto@gmail.com?subject=Consulta%20Diamond%20Clean&body=Hola%20Mauro%2C%20quiero%20más%20información%20sobre%20tus%20servicios.";
+  });
+});

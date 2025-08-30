@@ -7,33 +7,30 @@ menuToggle.addEventListener("click", () => {
 
 // ===== Cambio de idioma =====
 const languageSelect = document.getElementById("language-select");
-
-// Mapear los textos a cambiar por id o clase
 const texts = {
   h1: document.querySelector(".limpieza-texto h1"),
   p1: document.querySelector(".limpieza-texto p"),
   h2Servicios: document.querySelectorAll(".limpieza-texto h2")[0],
   h2PorQue: document.querySelectorAll(".limpieza-texto h2")[1],
   ulServicios: document.querySelector(".limpieza-texto ul"),
-  navLinks: document.querySelectorAll(".nav-links > li > a"), // links principales
-  dropdownLinks: document.querySelectorAll(".dropdown-menu > li > a"), // links del dropdown
+  navLinks: document.querySelectorAll(".nav-links > li > a"),
+  dropdownLinks: document.querySelectorAll(".dropdown-menu > li > a"),
   btnContacto: document.querySelector(".btn-contacto"),
 };
 
-// Traducciones
 const translations = {
   es: {
-    h1: "CONFIANZA Y CALIDAD EN CADA RINCÓN",
-    p1: "En DIAMOND CELAN nos especializamos en ofrecer limpieza profesional que transforma cualquier espacio. Garantizamos entornos higiénicos, organizados y agradables, cuidando cada detalle con dedicación.",
-    h2Servicios: "Servicios Incluidos:",
+    h1: "NUESTROS PLANES DE LIMPIEZA",
+    p1: "Descubre los planes de limpieza de DIAMOND CELAN, diseñados para adaptarse a tus necesidades. Garantizamos espacios impecables, saludables y organizados, cuidando cada detalle.",
+    h2Servicios: "Planes Disponibles:",
     ulServicios: [
-      "Limpieza completa de escritorios, sillas y áreas de trabajo",
-      "Higienización profunda de baños y cocinas",
-      "Mantenimiento de alfombras, tapicería y suelos",
-      "Limpieza y brillo de vidrios, cristales y superficies",
-      "Cuidado de áreas comunes y espacios de uso compartido"
+      "Plan Básico: Limpieza ligera semanal de áreas comunes y superficies.",
+      "Plan Estándar: Limpieza completa semanal, incluyendo baños y cocina.",
+      "Plan Premium: Limpieza profunda diaria con mantenimiento de alfombras y tapicería.",
+      "Plan Corporativo: Servicio personalizado para oficinas y empresas, con supervisión periódica.",
+      "Plan a Medida: Ajustamos la frecuencia y servicios según tus necesidades específicas."
     ],
-    h2PorQue: "¿Por qué elegirnos?",
+    h2PorQue: "¿Por qué elegir nuestros planes?",
     navLinks: ["Inicio", "Limpieza Profesional ▾", "Planes", "Nosotros", "Cobertura", "Trabajá con nosotros"],
     dropdownLinks: [
       "Limpieza Profesional",
@@ -48,17 +45,17 @@ const translations = {
     btnContacto: "Contacto",
   },
   en: {
-    h1: "TRUST AND QUALITY IN EVERY CORNER",
-    p1: "At DIAMOND CELAN we specialize in providing professional cleaning that transforms any space. We guarantee hygienic, organized, and pleasant environments, paying attention to every detail with dedication.",
-    h2Servicios: "Included Services:",
+    h1: "OUR CLEANING PLANS",
+    p1: "Discover DIAMOND CELAN cleaning plans, designed to fit your needs. We guarantee spotless, healthy, and organized spaces, paying attention to every detail.",
+    h2Servicios: "Available Plans:",
     ulServicios: [
-      "Complete cleaning of desks, chairs and work areas",
-      "Deep cleaning of bathrooms and kitchens",
-      "Maintenance of carpets, upholstery and floors",
-      "Cleaning and polishing of windows, glass and surfaces",
-      "Care of common areas and shared spaces"
+      "Basic Plan: Light weekly cleaning of common areas and surfaces.",
+      "Standard Plan: Complete weekly cleaning, including bathrooms and kitchen.",
+      "Premium Plan: Daily deep cleaning with carpet and upholstery maintenance.",
+      "Corporate Plan: Personalized service for offices and businesses, with periodic supervision.",
+      "Custom Plan: Frequency and services tailored to your specific needs."
     ],
-    h2PorQue: "Why choose us?",
+    h2PorQue: "Why choose our plans?",
     navLinks: ["Home", "Professional Cleaning ▾", "Plans", "About Us", "Coverage", "Work with us"],
     dropdownLinks: [
       "Professional Cleaning",
@@ -73,17 +70,17 @@ const translations = {
     btnContacto: "Contact",
   },
   nl: {
-    h1: "VERTROUWEN EN KWALITEIT IN ELK HOEKJE",
-    p1: "Bij DIAMOND CELAN zijn we gespecialiseerd in professionele reiniging die elke ruimte transformeert. We garanderen hygiënische, georganiseerde en aangename omgevingen, waarbij we op elk detail letten.",
-    h2Servicios: "Inbegrepen diensten:",
+    h1: "ONZE REINIGINGSPLANNEN",
+    p1: "Ontdek de reinigingsplannen van DIAMOND CELAN, ontworpen om aan uw behoeften te voldoen. We garanderen vlekkeloze, gezonde en georganiseerde ruimtes.",
+    h2Servicios: "Beschikbare plannen:",
     ulServicios: [
-      "Volledige reiniging van bureaus, stoelen en werkruimtes",
-      "Diepe reiniging van badkamers en keukens",
-      "Onderhoud van tapijten, bekleding en vloeren",
-      "Reiniging en glans van ramen, glas en oppervlakken",
-      "Zorg voor gemeenschappelijke ruimtes en gedeelde ruimtes"
+      "Basisplan: Wekelijkse lichte reiniging van gemeenschappelijke ruimtes en oppervlakken.",
+      "Standaardplan: Volledige wekelijkse reiniging, inclusief badkamers en keuken.",
+      "Premiumplan: Dagelijkse diepe reiniging met onderhoud van tapijten en bekleding.",
+      "Corporate Plan: Gepersonaliseerde service voor kantoren en bedrijven, met periodiek toezicht.",
+      "Maatwerkplan: Frequentie en diensten aangepast aan uw specifieke behoeften."
     ],
-    h2PorQue: "Waarom voor ons kiezen?",
+    h2PorQue: "Waarom voor onze plannen kiezen?",
     navLinks: ["Home", "Professionele Reiniging ▾", "Plannen", "Over Ons", "Dekking", "Werk met ons"],
     dropdownLinks: [
       "Professionele Reiniging",
@@ -101,15 +98,12 @@ const translations = {
 
 languageSelect.addEventListener("change", () => {
   const lang = languageSelect.value;
-
-  // Cambiar textos principales
   texts.h1.textContent = translations[lang].h1;
   texts.p1.textContent = translations[lang].p1;
   texts.h2Servicios.textContent = translations[lang].h2Servicios;
   texts.h2PorQue.textContent = translations[lang].h2PorQue;
   texts.btnContacto.textContent = translations[lang].btnContacto;
 
-  // Cambiar lista de servicios
   texts.ulServicios.innerHTML = "";
   translations[lang].ulServicios.forEach(item => {
     const li = document.createElement("li");
@@ -117,12 +111,10 @@ languageSelect.addEventListener("change", () => {
     texts.ulServicios.appendChild(li);
   });
 
-  // Cambiar nav principal
   texts.navLinks.forEach((link, i) => {
     link.textContent = translations[lang].navLinks[i];
   });
 
-  // Cambiar links del dropdown
   texts.dropdownLinks.forEach((link, i) => {
     link.textContent = translations[lang].dropdownLinks[i];
   });
